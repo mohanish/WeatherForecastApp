@@ -7,8 +7,9 @@ import retrofit2.http.Query
 
 interface WeatherApi {
     @Headers("Content-Type: application/json")
-    @GET("forecast?q=London")
+    @GET("forecast?")
     fun getWeatherApiData(
-        @Query("appid") appid: String
+        @Query("appid") appid: String,
+        @Query("q") city: String
     ): Deferred<WeatherData>
 }

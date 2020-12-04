@@ -12,13 +12,13 @@ interface WeatherDao {
 
     @Transaction
     fun replaceAll(weatherData: WeatherData) {
-//        deleteAll()
+        deleteAll()
         insertAll(weatherData = weatherData)
     }
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(weatherData: WeatherData)
 
-//    @Query("DELETE FROM " + "weatherforecast")
-//    fun deleteAll()
+    @Query("DELETE FROM " + "weatherforecast")
+    fun deleteAll()
 }

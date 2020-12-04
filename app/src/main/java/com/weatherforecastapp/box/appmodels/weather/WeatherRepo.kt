@@ -1,6 +1,5 @@
 package com.weatherforecastapp.box.appmodels.weather
 
-import androidx.lifecycle.LiveData
 import com.weatherforecastapp.BuildConfig.API_KEY
 import com.weatherforecastapp.box.db.WeatherDao
 import kotlinx.coroutines.Dispatchers
@@ -12,9 +11,9 @@ class WeatherRepo(
 ) {
     val weatherResultData = weatherDao.fetchAll()
 
-    suspend fun getWeatherApiData() {
+    suspend fun getWeatherApiData(city: String) {
         withContext(Dispatchers.IO) {
-            val weatherDataResult = weatherApi.getWeatherApiData(API_KEY).await()
+            val weatherDataResult = weatherApi.getWeatherApiData(API_KEY, city).await()
             weatherDao.replaceAll(weatherDataResult)
         }
     }

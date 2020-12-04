@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WeatherForecastApp</string>
+
+    <string name="clouds">Clouds</string>
+    <string name="rain">Rain</string>
+    <string name="thunderstorm">Thunderstorm</string>
+    <string name="mist">Mist</string>
+    <string name="clear">Clear</string>
+    <string name="search_city">Search city</string>
 </resources>
